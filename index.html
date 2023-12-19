@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/56bd8103c5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h1>Portfolio</h1>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-sharp fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <!-- <p><span>Frontend</span> Developer</p> -->
+            <h1>Anubhav Sharma</h1>
+            <p><span>Frontend</span> Developer</p>
+        </div>
+    </div>
+</div>
+<!-- ABOUT -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/background.png " alt="">
+            </div>   
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>Hi, I am a 2nd year computer science undergraduate and currently learning
+                     Web Development. Apart from development I also have 
+                    a keen interest in Cybersecurity and eager to explore this domain too.
+                    With all the skills I learn I aspire to make a meaningful contribution to the 
+                    ever-evolving digital landscape.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span></li>
+                            <li>Javascript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Bootstrap</li>
+                            <li>C/C++</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-2026</span></li>
+                            <li>Chandigarh University</li>
+                            <li>BE-CSE</li>
+                          
+                        </ul>
+                    </div>
+                    
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact</h1>
+                <p><i class="fa-solid fa-envelope"></i><a href="mailto:sharmaanubhav2403@gmail.com">sharmaanubhav2403@gmail.com </a></p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/anubhavsharrma?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anubhav-sharma-b7004425b/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/anubhavvsharma?tab=repositories"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+
+<script>
+
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname){  
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");   
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right= "-200px";
+    }
+</script>
+
+
+
+</body>
+</html>
